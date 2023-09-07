@@ -1,16 +1,28 @@
-const {Router} = require('express');
+const { Router } = require('express');
 const pool = require('../db');
 
 const {
-    getAllTasks,
-    getTask,
-    createTasks,
-    deleteTask,
-    updateTask,
-  } = require("../controllers/tasks.controller.js");
+  getAllTasks,
+  getTask,
+  createTasks,
+  deleteTask,
+  updateTask,
+  createUsers,
+  getAllusers,
+  deleteUser,
+  getUser,
+} = require("../controllers/tasks.controller.js");
 
 
 const router = Router();
+
+router.post('/users', createUsers);
+
+router.get('/users', getAllusers);
+
+router.get('/users/:id', getUser);
+
+router.delete('/users/:id', deleteUser);
 
 router.get('/tasks', getAllTasks);
 
