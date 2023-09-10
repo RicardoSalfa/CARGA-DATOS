@@ -11,6 +11,7 @@ const {
   getAllusers,
   deleteUser,
   getUser,
+  updateUser,
 } = require("../controllers/tasks.controller.js");
 
 
@@ -21,6 +22,8 @@ router.post('/users', createUsers);
 router.get('/users', getAllusers);
 
 router.get('/users/:id', getUser);
+
+router.put('/users/:id', updateUser);
 
 router.delete('/users/:id', deleteUser);
 
